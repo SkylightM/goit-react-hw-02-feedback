@@ -49,12 +49,12 @@ handleClick = event => {
         onLeaveFeedback={this.handleClick} />
       </Section>
       <Section title="Statistics">
-      <Statistics good={good}
+      {this.countTotalFeedback() > 0 ?(<Statistics good={good}
                   neutral={neutral}
                   bad={bad}
                   total={this.countTotalFeedback()}
-                  positivePercentage={this.countPositiveFeedbackPercentage()} />
-        <Notification message="There is no feedback"></Notification>
+                  positivePercentage={this.countPositiveFeedbackPercentage()} />) :
+        (<Notification message="There is no feedback"></Notification>)}
         </Section>
     </div>)
   }
